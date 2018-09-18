@@ -152,9 +152,13 @@
             "tsConfig": "projects/flight-app/tsconfig.app.json",
             "assets": [
               "projects/flight-app/src/favicon.ico",
-              "projects/flight-app/src/assets"
+              "projects/flight-app/src/assets",
+              "projects/flight-app/src/manifest.json"
             ],
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/flight-app/src/styles.css"
             ],
             "scripts": [
@@ -178,7 +182,8 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
@@ -207,12 +212,16 @@
             "tsConfig": "projects/flight-app/tsconfig.spec.json",
             "karmaConfig": "projects/flight-app/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/flight-app/src/styles.css"
             ],
             "scripts": [],
             "assets": [
               "projects/flight-app/src/favicon.ico",
-              "projects/flight-app/src/assets"
+              "projects/flight-app/src/assets",
+              "projects/flight-app/src/manifest.json"
             ]
           }
         },
