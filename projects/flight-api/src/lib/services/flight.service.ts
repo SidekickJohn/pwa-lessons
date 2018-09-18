@@ -9,7 +9,7 @@ import {Flight} from '../models/flight';
 export class FlightService {
 
   flights: Flight[] = [];
-  baseUrl: string = `http://www.angular.at/api/secureflight/byRoute`;
+  baseUrl: string = `http://www.angular.at/api/`;
   reqDelay = 1000;
 
   constructor(private http: HttpClient) {
@@ -31,7 +31,7 @@ export class FlightService {
     // let url = '/assets/data/data.json';
 
     // For online access
-    let url = [this.baseUrl, 'flight'].join('/');
+    let url = [this.baseUrl, 'secureflight/byRoute'].join('/');
 
     if (urgent) {
       url = [this.baseUrl,'error?code=403'].join('/');
