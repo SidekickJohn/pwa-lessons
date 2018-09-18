@@ -1,7 +1,7 @@
 import {AuthConfig} from "angular-oauth2-oidc";
 
 export const authConfig: AuthConfig = {
-    issuer: 'http://steyer-identity-server.azurewebsites.net/identity',
+    issuer: 'https://steyer-identity-server.azurewebsites.net/identity',
     redirectUri: window.location.origin + '/index.html',
     clientId: 'spa-demo',
     scope: 'openid profile email voucher'
