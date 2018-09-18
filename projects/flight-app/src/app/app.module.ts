@@ -18,6 +18,7 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from "@angular/material";
+import {OAuthModule} from "angular-oauth2-oidc";
 
 @NgModule({
     imports: [
@@ -26,7 +27,7 @@ import {MatSnackBarModule} from "@angular/material";
         FlightBookingModule,
         MatSnackBarModule,
         FlightCancellingModule,
-
+        OAuthModule.forRoot(),
         FlightApiModule.forRoot(),
         SharedModule.forRoot(),
         RouterModule.forRoot([...APP_ROUTES], {...APP_EXTRA_OPTIONS}),

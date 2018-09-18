@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {MatSnackBar} from "@angular/material";
 import {SwPush, SwUpdate} from "@angular/service-worker";
+import {JwksValidationHandler, OAuthService} from "angular-oauth2-oidc";
+import {authConfig} from "./auth.config";
 
 @Component({
     selector: 'flight-app',
@@ -11,10 +13,14 @@ export class AppComponent {
     constructor(
         private snackBar: MatSnackBar,
         private swUpdate: SwUpdate,
-        private swPush: SwPush
+        private swPush: SwPush,
+        private oAuthService: OAuthService
     ) {
         this.setupUpdates();
         this.setupPush();
+        this.oAuthService.configure(authConfig);
+        this.oAuthService.tokenValidationHandler = new JwksValidationHandler();
+        this.oAuthService.loadDiscoveryDocumentAndTryLogin();
     }
 
     private setupUpdates(): void {
