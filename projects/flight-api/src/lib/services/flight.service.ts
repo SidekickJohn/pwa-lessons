@@ -9,7 +9,7 @@ import {Flight} from '../models/flight';
 export class FlightService {
 
   flights: Flight[] = [];
-  baseUrl: string = `http://www.angular.at/api`;
+  baseUrl: string = `http://www.angular.at/api/secureflight/byRoute`;
   reqDelay = 1000;
 
   constructor(private http: HttpClient) {
